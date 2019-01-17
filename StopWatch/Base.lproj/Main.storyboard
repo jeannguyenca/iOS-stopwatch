@@ -40,6 +40,14 @@
                                     <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CkT-9g-rZp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4os-l7-1gK">
+                                <rect key="frame" x="156" y="611" width="63" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="restartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cN-iy-2ca"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,7 +56,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1PK-Ya-i6U" secondAttribute="trailing" constant="16" id="djI-xL-QkX"/>
                             <constraint firstItem="gNA-g5-Iwd" firstAttribute="centerY" secondItem="0Vd-ew-cuF" secondAttribute="centerY" id="eRw-JF-h3a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Vd-ew-cuF" secondAttribute="bottom" constant="20" id="fCc-62-gdT"/>
+                            <constraint firstItem="4os-l7-1gK" firstAttribute="centerY" secondItem="0Vd-ew-cuF" secondAttribute="centerY" id="gFH-FY-by8"/>
                             <constraint firstItem="1PK-Ya-i6U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="iCS-yk-Lmt"/>
+                            <constraint firstItem="4os-l7-1gK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jy2-5u-pbr"/>
                             <constraint firstItem="1PK-Ya-i6U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ztY-iE-iq1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

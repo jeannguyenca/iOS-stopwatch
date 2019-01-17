@@ -2,7 +2,7 @@
 //  Stopwatch.swift
 //  StopWatch
 //
-//  Created by Truong Huong Giang Nguyen on 1/14/19.
+//  Created by Jean Nguyen on 1/14/19.
 //  Copyright © 2019 Jean Nguyen. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import Foundation
 class Stopwatch {
     
     private var startTime: Date?
+    private var isStopped = false
     
     var elapsedTime: TimeInterval {
         if let startTime = self.startTime {
@@ -25,10 +26,28 @@ class Stopwatch {
     }
     
     func start() {
-        startTime = Date()
+        if (startTime != nil){
+            
+
+            if isRunning {
+                if !isStopped {
+                    print("isStopped ? \(isStopped)")
+                    startTime = Date().addingTimeInterval(-elapsedTime)
+                }
+            }
+        }else{
+            startTime = Date()
+            print("Start")
+        }
+
     }
     
-    func stop() {
+    func stop(){
+        isStopped = true
+    }
+    
+    func restart() {
         startTime = nil
     }
+    
 }
