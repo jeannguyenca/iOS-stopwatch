@@ -11,7 +11,7 @@ import Foundation
 class Stopwatch {
     
     private var startTime: Date?
-    private var isStopped = false
+    private var stopTime: Date?
     
     var elapsedTime: TimeInterval {
         if let startTime = self.startTime {
@@ -27,15 +27,21 @@ class Stopwatch {
     
     func start() {
         if (startTime != nil){
-            
-
+            //if the stop watch is running (not restart yet)
             if isRunning {
-                if !isStopped {
-                    print("isStopped ? \(isStopped)")
+                //if the start button is press when not stopped
+                if stopTime == nil {
+                    print("isStopped ? false")
                     startTime = Date().addingTimeInterval(-elapsedTime)
+                } else { //if the start button is press when stopped
+                    print("isStopped ? true")
+                    //get time interval between stopped time and resume time to adjust the right Date()
+                    let stopInterval = Date().timeIntervalSince(stopTime!)
+                    startTime = Date().addingTimeInterval(stopInterval).addingTimeInterval(-elapsedTime)
+                    stopTime = nil
                 }
             }
-        }else{
+        } else {
             startTime = Date()
             print("Start")
         }
@@ -43,7 +49,7 @@ class Stopwatch {
     }
     
     func stop(){
-        isStopped = true
+        stopTime = Date()
     }
     
     func restart() {
