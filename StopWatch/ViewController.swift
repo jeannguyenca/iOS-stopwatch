@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  StopWatch
 //
-//  Created by Truong Huong Giang Nguyen on 1/14/19.
+//  Created by Jean Nguyen on 1/14/19.
 //  Copyright © 2019 Jean Nguyen. All rights reserved.
 //
 
@@ -24,14 +24,16 @@ class ViewController: UIViewController {
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
         stopwatch.start()
-
+        
+        //if timer is nil, creaate new timer
         if(timer == nil){
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateElapseTimeLabel(timer:)), userInfo: nil, repeats: true)
         } else {
+            //is stop watch is not running, create new timer
             if(!stopwatch.isRunning){
                 timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateElapseTimeLabel(timer:)), userInfo: nil, repeats: true)
             }
-        }
+        } //if stop watch is running, do nothing
         
     }
     
@@ -39,11 +41,11 @@ class ViewController: UIViewController {
         stopwatch.stop()
         timer?.invalidate()
         timer = nil
-
     }
     
     @IBAction func restartButtonTapped(_ sender: UIButton) {
         stopwatch.restart()
+        //restart text
         elapseTimeLabel.text = String(format: "%02d:%02d.%d", 0, 0, 0)
     }
     
